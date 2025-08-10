@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知識ゼロから始める最新副業</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 1枚目の画像 -->
+        <section class="hero-section">
+            <img src="png/lp-01.png" alt="知識ゼロから始める最新副業 - スマホ×AIで新しい自分に - 1日15分の作業で日給10万円も目指せる!" class="main-image">
+            
+            <!-- LINE登録ボタン（1枚目の画像の下部に重ねて配置） -->
+            <div class="cta-overlay">
+                <a href="#" class="line-button" onclick="handleLineClick()">
+                    <img src="png/直リンク4.png" alt="LINE登録はこちらから" class="line-button-image">
+                </a>
+            </div>
+        </section>
+
+        <!-- 2枚目の画像 -->
+        <section class="hero-section">
+            <img src="png/lp-11.png" alt="報酬発生までの簡単3STEP - 無料でLINE登録をして仕事開始！スマホでかんたん作業！らくらく報酬GET！" class="main-image">
+        </section>
+
+        <!-- 3枚目の画像 -->
+        <section class="hero-section">
+            <img src="png/lp-03.png" alt="友達追加キャンペーン - LINE友達追加&条件クリアで1ヶ月5万円の収益を保証" class="main-image">
+            
+            <!-- LINE登録ボタン（3枚目の画像の真ん中に配置） -->
+            <div class="cta-overlay center">
+                <a href="#" class="line-button" onclick="handleLineClick()">
+                    <img src="png/直リンク4.png" alt="LINE登録はこちらから" class="line-button-image">
+                </a>
+            </div>
+            
+            <!-- ご質問はこちらから画像（3枚目の画像の下部に配置） -->
+            <div class="qa-overlay">
+                <a href="#" class="qa-button" onclick="handleQAClick()">
+                    <img src="png/ご質問はこちらから.png" alt="Q&A - ご質問はこちらから" class="qa-image">
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function handleLineClick() {
+            // LINE登録用のURLを設定してください
+            const lineUrl = 'https://lin.ee/FsDdtsn';
+            
+            // 新しいタブでLINEを開く
+            window.open(lineUrl, '_blank');
+            
+            // アナリティクスやトラッキングコードがある場合はここに追加
+            console.log('LINE登録ボタンがクリックされました');
+        }
+
+        function handleQAClick() {
+            // Q&A・お問い合わせ用のURLを設定してください（ダミーURL）
+            const qaUrl = 'https://lin.ee/FsDdtsn';
+            
+            // 新しいタブでQ&Aページを開く
+            window.open(qaUrl, '_blank');
+            
+            // アナリティクスやトラッキングコードがある場合はここに追加
+            console.log('Q&Aボタンがクリックされました');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+/* リセットとベーススタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #fff;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* ヒーローセクション（メイン画像） */
+.hero-section {
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    position: relative;
+}
+
+.main-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* CTAオーバーレイ（画像上に重ねるLINE登録ボタン） */
+.cta-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* 中央配置用のCTAオーバーレイ */
+.cta-overlay.center {
+    top: 55%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    transform: translate(-50%, -50%);
+}
+
+/* 3枚目のLINEボタンを1枚目と同じサイズに強制設定 */
+.cta-overlay.center .line-button-image {
+    width: 100%;
+    max-width: 800px !important;
+    min-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ご質問はこちらから画像のオーバーレイ */
+.qa-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Q&Aボタンのスタイル */
+.qa-button {
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    animation: gentle-float 4s ease-in-out infinite;
+}
+
+.qa-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    animation-play-state: paused;
+}
+
+.qa-button:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
+.qa-image {
+    width: 90%;
+    max-width: 540px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    filter: brightness(1) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+.qa-button:hover .qa-image {
+    filter: brightness(1.1) drop-shadow(0 8px 25px rgba(255, 165, 0, 0.4));
+}
+
+
+
+
+
+.line-button {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    animation: bounce-pulse 2s infinite;
+}
+
+.line-button:hover {
+    transform: scale(1.05);
+    animation-play-state: paused;
+}
+
+.line-button:active {
+    transform: scale(0.98);
+}
+
+.line-button-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+/* アニメーション定義 */
+@keyframes bounce-pulse {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    10% {
+        transform: translateY(-8px) scale(1.02);
+    }
+    40% {
+        transform: translateY(-5px) scale(1.01);
+    }
+    60% {
+        transform: translateY(-3px) scale(1.005);
+    }
+}
+
+@keyframes glow {
+    0% {
+        filter: brightness(1) drop-shadow(0 0 5px rgba(0, 255, 0, 0.3));
+    }
+    50% {
+        filter: brightness(1.1) drop-shadow(0 0 15px rgba(0, 255, 0, 0.5));
+    }
+    100% {
+        filter: brightness(1.05) drop-shadow(0 0 10px rgba(0, 255, 0, 0.4));
+    }
+}
+
+/* Q&Aボタンのアニメーション定義 */
+@keyframes gentle-float {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    25% {
+        transform: translateY(-3px) scale(1.01);
+    }
+    50% {
+        transform: translateY(-6px) scale(1.02);
+    }
+    75% {
+        transform: translateY(-3px) scale(1.01);
+    }
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .main-image {
+        width: 100%;
+    }
+    
+    .line-button-image {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    /* 3枚目のLINEボタンもタブレットで1枚目と同じサイズ */
+    .cta-overlay.center .line-button-image {
+        width: 100%;
+        max-width: 100% !important;
+        min-width: 200px;
+    }
+    
+    /* ご質問はこちらから画像（タブレット） */
+    .qa-image {
+        width: 90%;
+        max-width: 450px;
+    }
+    
+    .qa-overlay {
+        padding: 15px 0;
+    }
+    
+    /* Q&Aボタンのタブレット調整 */
+    .qa-button:hover {
+        transform: translateY(-3px) scale(1.03);
+    }
+}
+
+@media (max-width: 480px) {
+    .main-image {
+        width: 100%;
+    }
+    
+    .line-button-image {
+        width: 100%;
+    }
+    
+    /* 3枚目のLINEボタンもスマートフォンで1枚目と同じサイズ */
+    .cta-overlay.center .line-button-image {
+        width: 100%;
+        max-width: 100% !important;
+        min-width: 150px;
+    }
+    
+    /* ご質問はこちらから画像（スマートフォン） */
+    .qa-image {
+        width: 90%;
+        max-width: 360px;
+    }
+    
+    .qa-overlay {
+        padding: 10px 0;
+    }
+    
+    /* Q&Aボタンのスマートフォン調整 */
+    .qa-button:hover {
+        transform: translateY(-2px) scale(1.02);
+    }
+}
